@@ -1,19 +1,36 @@
 $(document).ready(function(){
   
+$.getJSON("https://cpv2api.herokuapp.com/posts/published/j-w-v", function(resp){
+  if(resp.success){
+    for (var i = 0; i < resp.data.length; i++) { 
+    $('.posts ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
+    }
+  }
+});
+
+$.getJSON("https://cpv2api.herokuapp.com/pens/showcase/j-w-v", function(resp){
+  if(resp.success){
+    for (var i = 0; i < 5; i++) { 
+    $('.pens ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
+    }
+  }
+}); 
+
+
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 33,
       "density": {
         "enable": true,
-        "value_area": 800
+        "value_area": 1420.4657549380909
       }
     },
     "color": {
       "value": "#ffffff"
     },
     "shape": {
-      "type": "circle",
+      "type": "triangle",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -28,7 +45,7 @@ particlesJS("particles-js", {
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.06313181133058181,
       "random": false,
       "anim": {
         "enable": false,
@@ -38,7 +55,7 @@ particlesJS("particles-js", {
       }
     },
     "size": {
-      "value": 3,
+      "value": 11.83721462448409,
       "random": true,
       "anim": {
         "enable": false,
@@ -56,7 +73,7 @@ particlesJS("particles-js", {
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 6,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -74,7 +91,7 @@ particlesJS("particles-js", {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "grab"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
@@ -84,7 +101,7 @@ particlesJS("particles-js", {
     },
     "modes": {
       "grab": {
-        "distance": 140,
+        "distance": 400,
         "line_linked": {
           "opacity": 1
         }
@@ -110,112 +127,18 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
-
-var wow = new WOW(
-  {
-    boxClass:     'wow',      // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       true,       // trigger animations on mobile devices (default is true)
-    live:         true        // act on asynchronously loaded content (default is true)
-  }
-);
-wow.init();
+ 
 
 
 
 
 
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
 
-
-var h3 = 868;
- $('div#particles-js canvas').height(h3);
-
-
-
-$('.Mwork').click(function() {
-    $('html,body').animate({
-        scrollTop: $("#portfolio").offset().top},
-        'slow');
-});
-
-$('.Mcontact').click(function() {
-    $('html,body').animate({
-        scrollTop: $("#contact").offset().top},
-        'slow');
-});
-
-$('.Mhome').click(function() {
-    $('html,body').animate({
-        scrollTop: $("#particles-js").offset().top},
-        'slow');
-});
-
-$('.MaboutMe').click(function() {
-    $('html,body').animate({
-        scrollTop: $("#aboutMe").offset().top},
-        'slow');
-});
-
-
-$('.MaboutMe').click(function(){
-
-    $('.skillbar').each(function(){
-        $(this).find('.skillbar-bar').animate({
-          width:0
-        },500).animate({
-            width:$(this).attr('data-percent')
-        },3000);
-    });
-});
-
-
-
-$('.sp').first().addClass('active');
-$('.sp').hide();    
-$('.active').show();
-
-    $('#button-next').click(function(){
-
-    $('.active').removeClass('active').addClass('oldActive');    
-                   if ( $('.oldActive').is(':last-child')) {
-        $('.sp').first().addClass('active');
-        }
-        else{
-        $('.oldActive').next().addClass('active');
-        }
-    $('.oldActive').removeClass('oldActive');
-    $('.sp').fadeOut();
-    $('.active').fadeIn();
-        
-        
-    });
-    
-       $('#button-previous').click(function(){
-    $('.active').removeClass('active').addClass('oldActive');    
-           if ( $('.oldActive').is(':first-child')) {
-        $('.sp').last().addClass('active');
-        }
-           else{
-    $('.oldActive').prev().addClass('active');
-           }
-    $('.oldActive').removeClass('oldActive');
-    $('.sp').fadeOut();
-    $('.active').fadeIn();
-    });
-
-
-
-    var feed = new Instafeed({
-        userId: 7523095,
-        get: 'user',
-        limit: 15,
-        accessToken: '7523095.467ede5.45aa03181f93415d918a7054d76093d2',
-        template: '<a href="{{link}}"><img src="{{image}}" /></a>'
-    });
-    feed.run();
-
-
+  _gs('GSN-237067-M');
 
 
 
