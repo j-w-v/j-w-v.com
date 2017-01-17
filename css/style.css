@@ -54,7 +54,6 @@ label{
   font-family: 'Monoton', cursive;
   color: white;
   font-size: 8rem;
-  display: inline-block;
 }
 
 
@@ -91,13 +90,12 @@ label{
   font-size:1.2rem;
 }
 
-.footer{
+
+
+.smallLogo{
+  font-size: 3.5rem;
 }
 
-.footer p{
-  color:white;
-  font-size:1.2rem;
-}
 
 .services h2{
       color: #fc3565;
@@ -118,9 +116,6 @@ label{
 }
 
 .cta{
-    background: #2C2D35;
-    position: fixed;
-    bottom: 0px;
     text-align: center;
 }
 
@@ -130,6 +125,27 @@ label{
     display: inline-block;
     margin: 1.5rem;
     text-align: center;
+}
+
+.footer{
+}
+
+.footer p {
+    color: white;
+    font-size: 1rem;
+    margin: 0px;
+    padding: 0px;
+}
+.footerLinks{
+  margin:0px;
+  padding:0px;
+}
+
+.footerLinks li{
+  display:inline-block;
+  color: white;
+  margin:10px;
+
 }
 
 .button.button-primary,button.button-primary,input[type=button].button-primary,input[type=reset].button-primary,input[type=submit].button-primary {
@@ -173,6 +189,13 @@ label{
   .footer{
     
   }
+
+  .cta{
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
+
 }
 
 
